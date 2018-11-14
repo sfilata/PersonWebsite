@@ -1,5 +1,3 @@
-
-
 export default {
     device: {
         type: 'mobile'
