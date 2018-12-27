@@ -1,6 +1,89 @@
-extends layout
-
-block content
-  h1= title
-  p #{title}大Low逼
-  p 剩下的事情不重要
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+    meta(name='viewport', content='width=device-width,initial-scale=1.0,maximum-scale=1.0')
+    title Shape Shifter
+    link(rel='stylesheet', href='/stylesheet/site.min.css')
+  body
+    canvas.canvas
+    .help ?
+    .ui
+      input.ui-input(type='text')
+      span.ui-return ↵
+    .overlay
+      span.twitter-share
+        a.twitter-share-button(href='https://twitter.com/share', data-dnt='true', data-count='none') Tweet
+      .tabs
+        .tabs-labels
+          span.tabs-label Commands
+          span.tabs-label Info
+          span.tabs-label Share
+        .tabs-panels
+          ul.tabs-panel.commands
+            li.commands-item
+              span.commands-item-title Text
+              span.commands-item-info(data-demo='Hello :)') Type anything
+              span.commands-item-action Demo
+            li.commands-item
+              span.commands-item-title Countdown
+              span.commands-item-info(data-demo='#countdown 10')
+                | #countdown
+                span.commands-item-mode number
+              span.commands-item-action Demo
+            li.commands-item
+              span.commands-item-title Icon
+              span.commands-item-info(data-demo='#icon thumbs-up')
+                | #icon
+                span.commands-item-mode name
+                |  (using 
+                a(href='//fortawesome.github.io/Font-Awesome/#icons-new', target='_blank') Font Awesome
+                | )
+              span.commands-item-action Demo
+            li.commands-item
+              span.commands-item-title Time
+              span.commands-item-info(data-demo='#time') #time
+              span.commands-item-action Demo
+            li.commands-item
+              span.commands-item-title Rectangle
+              span.commands-item-info(data-demo='#rectangle 30x15')
+                | #rectangle
+                span.commands-item-mode width x height
+              span.commands-item-action Demo
+            li.commands-item
+              span.commands-item-title Circle
+              span.commands-item-info(data-demo='#circle 25')
+                | #circle
+                span.commands-item-mode diameter
+              span.commands-item-action Demo
+            li.commands-item.commands-item--gap
+              span.commands-item-title Animate
+              span.commands-item-info(data-demo='The time is|#time|#countdown 3|#icon thumbs-up')
+                span.commands-item-mode command1
+                |  |
+                span.commands-item-mode command2
+              span.commands-item-action Demo
+          .tabs-panel.ui-details
+            .ui-details-content
+              h1 Shape Shifter
+              p
+                | An experiment by 
+                a(href='//www.kennethcachia.com', target='_blank') Kenneth Cachia
+                a
+                  | .
+                  br
+                a(href='//fortawesome.github.io/Font-Awesome/#icons-new', target='_blank') Font Awesome
+                |  is being used to render all #icons.
+          .tabs-panel.ui-share
+            .ui-share-content
+              h1 Sharing
+              p
+                | Simply add 
+                em ?a=
+                |  to the current URL to share any static or animated text. Examples:
+              p
+                a(href='?a=Hello') www.kennethcachia.com/shape-shifter?a=Hello
+                br
+                a(href='?a=Hello|#countdown 3') www.kennethcachia.com/shape-shifter?a=Hello|#countdown 3
+    script(src='/javascript/shape-shifter.js')
