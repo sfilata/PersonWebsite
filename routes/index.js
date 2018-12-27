@@ -25,6 +25,10 @@ router.get('/', async (ctx, next) => {
   })
 })
 
+router.get('/test', async (ctx, next) => {
+  await ctx.render('test.html')
+})
+
 router.get('/string', async (ctx, next) => {
     await ctx.render('layout', {
         title: 'koa2 string'

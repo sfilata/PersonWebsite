@@ -15,16 +15,19 @@ var S = {
     S.ShapeBuilder.init();
     S.UI.init();
     document.body.classList.add('body--ready');
+    if (confirm('请先翻转手机, 要不就不好看了')) {
+      if (i !== -1) {
+        S.UI.simulate(decodeURI(action).substring(i + 3));
+      } else {
+        S.UI.simulate('Happy|Birthday|#time||');
+      }
 
-    if (i !== -1) {
-      S.UI.simulate(decodeURI(action).substring(i + 3));
+      S.Drawing.loop(function () {
+        S.Shape.render();
+      });
     } else {
-      S.UI.simulate('Shape|Shifter|Type|to start|#icon thumbs-up|#countdown 3||');
+      return false;
     }
-
-    S.Drawing.loop(function () {
-      S.Shape.render();
-    });
   }
 };
 
