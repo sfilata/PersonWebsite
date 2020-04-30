@@ -21,8 +21,12 @@ const router = require('koa-router')()
 
 router.get('/', async (ctx, next) => {
   await ctx.render('index', {
-    title: 'Hello Sfilata!'
+    title: '杜柯禹'
   })
+})
+
+router.get('/test', async (ctx, next) => {
+  await ctx.render('test.html')
 })
 
 router.get('/string', async (ctx, next) => {
