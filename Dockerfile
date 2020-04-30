@@ -1,7 +1,6 @@
 FROM node:8.11.3
-MAINTAINER sfilata
 
-ADD . /app/
+COPY . /app/
 WORKDIR /app
 
 RUN npm install
